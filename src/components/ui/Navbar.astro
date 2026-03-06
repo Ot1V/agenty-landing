@@ -1,15 +1,15 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Logo from "./Logo.astro";
 
 const menuitems = [
-  { href: '/about', label: 'About us' },
-  { href: '/services', label: 'Services' },
-  { href: '/#cases', label: 'Use Cases' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/articles', label: 'Blog'},
+  { href: '#how-it-works', label: 'How It Works' },
+  { href: '#solutions', label: 'Solutions' },
+  { href: '#benefits', label: 'Benefits' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
-const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'Request a quote' };
+const navButton = { href: '#audit', label: 'Get Your Lost Lead Audit' };
 ---
 
 <div class="mt-20">
@@ -18,7 +18,7 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'R
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/Logo.svg" class="h-8" alt="Logo" />
+            <Logo />
           </a>
           <div class="block lg:hidden">
             <div id="menu-icon" class="w-8 h-8 text-black cursor-pointer">

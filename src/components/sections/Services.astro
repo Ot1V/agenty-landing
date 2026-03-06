@@ -3,81 +3,53 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
 
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
-import c6 from "../../assets/pics/card-pic6.png";
-
 const cards = [
   {
     index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
-    img: c1,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Instant SMS & WhatsApp Agent",
+    description: "Engages every new lead within seconds via text. Qualifies them, answers their questions, and books directly into your calendar. Works around the clock so your team doesn't have to.",
+    icon: "💬"
   },
   {
     index: 2,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
-    img: c2,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "AI Voice Agent",
+    description: "Catches every missed call and follows up with inbound leads by phone. Natural, human sounding conversations that qualify and schedule without your team lifting a finger.",
+    icon: "📞"
   },
   {
     index: 3,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
-    img: c3,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Website Chat & Social DMs",
+    description: "Converts website visitors and Instagram or Facebook inquiries into booked appointments before they bounce to a competitor. Instant replies on every channel they use.",
+    icon: "🌐"
   },
   {
-    index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
-    img: c4,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
-    img: c6,
-    alt: "SEO",
-    link: "https://google.com",
-  },
+    index: 4,
+    title: "Database Reactivation Engine",
+    description: "Turns your old, dead leads into revenue. AI re-engages thousands of contacts you already paid to acquire and books the ones who are still interested. Revenue you wrote off, recovered.",
+    icon: "🔄"
+  }
 ];
 
-const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+const description = "Every channel covered. Every lead followed up. Every appointment confirmed.";
 ---
 
-<Section id="services">
+<Section id="solutions">
   <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Services" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+    <SectionTitle 
+      sectionTitle="What We Install" 
+      description={description} 
+    />
+    <div class="mb-12 mt-4 text-center md:text-left">
+      <h2 class="text-4xl md:text-5xl font-medium tracking-tight">A Complete Lead Conversion Ecosystem, <br class="hidden lg:block"/>Not Just Another Bot</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10">
       {
         cards.map((card) => (
           <ServiceCard
             index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
+            title={card.title}
+            description={card.description}
+            icon={card.icon}
           />
         ))
       }

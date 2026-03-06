@@ -1,23 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import Facebook from "../../assets/facebook.svg";
-import Linkedin from "../../assets/linkedin.svg";
-import Logo from "../../assets/logo-alt.svg";
-import Twitter from "../../assets/twitter.svg";
+import Logo from "./Logo.astro";
 import ShortForm from "../ui/ShortForm.astro";
 
-const logos = [
-  { name: "Facebook", src: Facebook, link: "https://facebook.com" },
-  { name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
-  { name: "Twitter", src: Twitter, link: "https://twitter.com" },
+const navigationLinks = [
+  { name: "How It Works", href: "#how-it-works" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Benefits", href: "#benefits" },
+  { name: "FAQ", href: "#faq" },
 ];
 
-const links = [
-  { name: "About us", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Use Cases", href: "#cases" },
-  { name: "Pricing", href: "#Testimonials" },
-  { name: "Blog", href: "#Home" },
+const legalLinks = [
+  { name: "Privacy Policy", href: "#" },
+  { name: "Terms of Service", href: "#" },
+];
+
+const contactLinks = [
+  { name: "vito@7agenty.it", href: "mailto:vito@7agenty.it" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/vito-pugni-36bb25250/" },
+  { name: "Twitter", href: "#" },
 ];
 ---
 
@@ -30,95 +30,45 @@ const links = [
         <div
           class="flex flex-col lg:flex-row gap-7 items-center justify-between"
         >
-          <picture>
+          <div class="flex flex-col items-center lg:items-start gap-4">
             <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
+              <Logo darkBg={true} />
             </a>
-          </picture>
-          <ul class="flex flex-col sm:flex-row gap-5">
-            {
-              links.map((link) => {
-                return (
-                  <li class="text-center">
-                    <a class="underline" href={link.href}>
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
-          <ul class="flex gap-5">
-            {
-              logos.map((logo) => {
-                return (
-                  <li>
-                    <a href={logo.link} target="_blank">
-                      <picture>
-                        <Image src={logo.src} alt={logo.name} />
-                      </picture>
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
+            <p class="text-white text-center flex-grow text-lg max-w-sm mt-4">
+              60-Second Lead Response. 24/7 Follow Up. More Booked Appointments.
+            </p>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-10 mt-10 lg:mt-0 text-white justify-end w-full lg:w-1/2">
+            <ul class="flex flex-col gap-3">
+              <li class="font-bold mb-2">Navigation</li>
+              {navigationLinks.map((link) => (
+                <li><a class="hover:underline" href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+            <ul class="flex flex-col gap-3">
+              <li class="font-bold mb-2">Legal</li>
+              {legalLinks.map((link) => (
+                <li><a class="hover:underline" href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+            <ul class="flex flex-col gap-3">
+              <li class="font-bold mb-2">Contact</li>
+              {contactLinks.map((link) => (
+                <li><a class="hover:underline" href={link.href}>{link.name}</a></li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
-          <div
-            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
-          >
-            <h3 class="mb-5 text-center md:text-left text-2xl text-green">Contact us</h3>
-            <div class="flex flex-col justify-between gap-4">
-              <span> Email: examplemail.com </span>
-              <span> Phone: +123 456 789 </span>
-              <span class="lg:w-3/4">
-                Address: 1234 Street Name, City Name, Country Name
-              </span>
-            </div>
-          </div>
-          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
-            <ShortForm />
-          </div>
-        </div>
+
       </div>
 
-      <div class="h-[1px] bg-gray mb-5"></div>
+      <div class="h-[1px] bg-gray mb-5 mt-10"></div>
       <div
         class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
       >
-        <span
-          >2024 Positivus - Made With <a
-            class="underline"
-            target="_blank"
-            href="https://astro.build">Astro</a
-          > by 
-          <a 
-          class="underline"
-          target="_blank"
-          href="https://manulthanura.com">Manul</a
-          ></span
-        >&nbsp
-        <span>
-          Credits (
-          <a
-            href="https://www.olgaskuja.design/"
-            target="_blank"
-            class="underline">Olga</a
-          >,
-          <a
-            href="https://esteban-vasquez.netlify.app/"
-            target="_blank"
-            class="underline">Esteban</a
-          >)
-          <span> &</span>
-          <a
-            class="underline"
-            href="https://creativecommons.org/licenses/by/4.0/"
-            target="_blank">Licence</a
-          >
-        </span>
+        <span>© 2026 7 agenty. All rights reserved.</span>
       </div>
     </div>
   </div>

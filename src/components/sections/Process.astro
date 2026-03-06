@@ -1,17 +1,42 @@
 ---
-import Accordion from "../ui/Accordion.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 
-const description = "Step-by-Step Guide to Achieving Your Business Goals";
+const steps = [
+  {
+    number: "01",
+    title: "Lost Lead Audit",
+    description: "We analyze your current lead flow, response times, show rates, and follow up gaps. You see exactly how much revenue is slipping through the cracks, broken down by channel and stage. No cost, no commitment."
+  },
+  {
+    number: "02",
+    title: "Custom System Build",
+    description: "We design and install your complete speed to lead ecosystem: AI agents, booking flows, nurture sequences, and no show recovery. Everything is tailored to your business, your CRM, and your channels."
+  },
+  {
+    number: "03",
+    title: "Go Live & Optimize",
+    description: "Your system launches within 7 days. We monitor performance and optimize conversion rates weekly. As your lead volume grows, we scale with you. You focus on what you do best: closing."
+  }
+];
+
+const description = "Three Steps. Seven Days. More Appointments.";
 ---
 
-<Section id="process">
+<Section id="how-it-works">
   <div class="mt-[140px]">
     <SectionTitle
-      sectionTitle="Our Working Process"
+      sectionTitle="How It Works"
       description={description}
     />
-    <Accordion />
+    <div class="grid lg:grid-cols-3 gap-8 mt-14">
+      {steps.map((step) => (
+        <div class="flex flex-col border-t-2 border-black pt-8">
+          <span class="text-6xl font-medium mb-6 text-accent">{step.number}</span>
+          <h3 class="text-3xl font-medium mb-4">{step.title}</h3>
+          <p class="text-lg text-zinc-600">{step.description}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </Section>

@@ -1,15 +1,20 @@
 ---
-import Form from "../ui/Form.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 ---
 
-<Section id="contact">
-  <div class="mb-[140px] relative">
-    <SectionTitle
-      sectionTitle="Contact Us"
-      description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
-    />
-    <Form />
+<Section id="audit">
+  <div class="mb-[140px] mt-20 relative bg-gray sm:rounded-[45px] p-10 md:p-20 text-center flex flex-col items-center shadow-sm border border-zinc-200">
+    <h2 class="text-4xl md:text-6xl font-medium mb-8 max-w-4xl tracking-tight">
+      Find Out How Much Revenue You're Losing to <span class="text-accent hover:underline">Slow Response</span>
+    </h2>
+    <p class="text-xl md:text-2xl text-zinc-600 mb-12 max-w-3xl leading-relaxed">
+      The Lost Lead Audit takes 2 minutes. We'll show you the exact gaps in your lead flow, the revenue impact, and what it looks like when every lead is contacted in under 60 seconds.
+    </p>
+    <a href="#" class="px-10 py-5 bg-accent hover:bg-black rounded-2xl text-white transition-all transform hover:scale-105 text-xl font-medium shadow-xl">
+      Get Your Lost Lead Audit &rarr;
+    </a>
+    <p class="mt-8 text-zinc-500 font-medium">
+      Live in 7 days or you don't pay month one. No risk. No long term contracts.
+    </p>
   </div>
 </Section>

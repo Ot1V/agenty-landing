@@ -1,0 +1,62 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const oldWay = [
+  "Leads wait hours (sometimes days) for a callback",
+  "Follow up is manual and drops off after one or two attempts",
+  "No shows stack up with zero recovery process",
+  "Your team wastes time chasing people who were never qualified",
+  "Old leads sit in the CRM collecting dust, never touched again"
+];
+
+const newWay = [
+  "Every lead gets a response in under 60 seconds, 24/7",
+  "AI powered follow up runs across SMS, email, voice, and DMs",
+  "Automated reminders, confirmations, and no show recovery sequences",
+  "Only qualified, booked appointments land on your calendar",
+  "Dead databases get reactivated and turned back into revenue"
+];
+---
+
+<Section id="comparison">
+  <div class="mt-[140px] mb-5">
+    <div class="mb-4">
+      <span class="accenthead inline-block uppercase tracking-wider font-bold text-sm">The Real Problem</span>
+    </div>
+    <SectionTitle 
+      sectionTitle="You Don't Have a Lead Problem. You Have a Speed Problem." 
+      description=""
+    />
+    
+    <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- Old Way -->
+      <div class="bg-gray p-8 md:p-12 sm:rounded-[45px] shadow-sm border border-zinc-200">
+        <h3 class="text-3xl font-medium mb-2">Without a Speed to Lead System</h3>
+        <p class="text-zinc-600 mb-8 font-medium">What most businesses are doing right now</p>
+        <ul class="space-y-6">
+          {oldWay.map(point => (
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">✕</span>
+              <span class="text-lg">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- New Way -->
+      <div class="bg-dark text-white p-8 md:p-12 sm:rounded-[45px] shadow-xl border border-zinc-800 lg:-translate-y-4">
+        <h3 class="text-3xl font-medium mb-2 text-accent">With the Full Speed to Lead Ecosystem</h3>
+        <p class="text-zinc-400 mb-8 font-medium">What changes when speed and follow up are automated</p>
+        <ul class="space-y-6">
+          {newWay.map(point => (
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">✓</span>
+              <span class="text-lg">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</Section>

@@ -1,5 +1,21 @@
 ---
-import Testimonials from "../../data/clientData.json";
+const Testimonials = [
+  {
+    "comment": "We were losing leads for months before realizing speed was the issue. Within the first week of going live, our booked appointments jumped significantly. The ROI was obvious from day one.",
+    "name": "Solar Company Owner",
+    "role": "Residential Solar"
+  },
+  {
+    "comment": "Our response time went from hours to under a minute. The no show rate dropped, the pipeline filled up, and my sales team actually has qualified conversations now instead of chasing unresponsive contacts.",
+    "name": "Insurance Agency Director",
+    "role": "High Ticket Insurance"
+  },
+  {
+    "comment": "We had over 8,000 old leads sitting in our CRM doing nothing. The reactivation campaign alone generated dozens of booked appointments in the first 30 days. Revenue we had completely written off.",
+    "name": "Real Estate Team Lead",
+    "role": "Luxury Real Estate"
+  }
+];
 
 const processedTestimonials = Testimonials.map((item, index, array) => ({
   ...item,
@@ -12,7 +28,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
   id="ProjectSlider"
   class="swiper mt-10"
   style={{
-    "--swiper-pagination-color": "var(--green)",
+    "--swiper-pagination-color": "var(--accent)",
     "--swiper-pagination-bullet-inactive-color": "#fff",
     "--swiper-pagination-bullet-inactive-opacity": "1",
     "--swiper-pagination-bullet-size": "19px",
@@ -33,8 +49,8 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
             </p>
           </div>
           <div class="w-full px-10 sm:px-20 ">
-            <div class="text-green font-medium">{item.name}</div>
-            <div>{item.role}</div>
+            <div class="text-accent font-medium mb-1">{item.name}</div>
+            <div class="text-white text-sm opacity-80">{item.role}</div>
           </div>
         </div>
       ))
@@ -103,9 +119,9 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     position: relative;
     padding: 8%;
     background-color: var(--dark);
-    color: var(--gray);
+    color: var(--white);
     border-radius: 45px;
-    border: 1px solid var(--green);
+    border: 1px solid var(--accent);
   }
   .bubble:after {
     content: "";
@@ -123,7 +139,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     left: 48px; /* This should be 1px less than the left value of .bubble:after */
     border-width: 20px; /* Adjust this to match the border-width of .bubble:after */
     border-style: solid;
-    border-color: var(--green) transparent transparent var(--green);
+    border-color: var(--accent) transparent transparent var(--accent);
   }
   .swiper-wrapper {
     position: relative;

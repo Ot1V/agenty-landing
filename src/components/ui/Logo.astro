@@ -1,0 +1,10 @@
+---
+const { darkBg = false } = Astro.props;
+---
+<div class="flex items-center gap-2">
+  <svg class={`h-8 w-auto ${darkBg ? 'text-white' : 'text-accent'}`} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="12" r="4.5" fill="currentColor" />
+    <rect x="14" y="5" width="9" height="22" rx="4.5" transform="rotate(35 18 16)" fill="currentColor" />
+  </svg>
+  <span class={`text-[32px] font-semibold tracking-tight ${darkBg ? 'text-white' : 'text-[#0e0e0e]'}`} style="font-family: inherit;">agenty</span>
+</div>

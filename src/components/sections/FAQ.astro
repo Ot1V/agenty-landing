@@ -1,0 +1,62 @@
+---
+import AccordionItem from "../ui/AccordionItem.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const faqs = [
+  {
+    index: 1,
+    title: "Will this work with my CRM?",
+    description: "Yes. We integrate with all major CRMs including GoHighLevel, HubSpot, Salesforce, and many others. If you use a custom or niche platform, we assess compatibility during the audit and find the best integration path. Most setups require zero migration."
+  },
+  {
+    index: 2,
+    title: "Does this replace my sales team?",
+    description: "No. This system creates more qualified conversations for your team to close. It handles the speed, follow up, and booking layer so your salespeople spend 100% of their time on what matters: closing deals with people who actually show up."
+  },
+  {
+    index: 3,
+    title: "What if we already have automations in place?",
+    description: "Most businesses have some form of follow up, but very few respond within 60 seconds or follow up persistently across every channel. We audit what you have, keep what works, and fill the gaps that are costing you booked appointments."
+  },
+  {
+    index: 4,
+    title: "How quickly can we expect results?",
+    description: "Your system goes live within 7 days of onboarding. Most businesses see a measurable increase in booked appointments within the first two weeks. The full impact compounds over time as nurture sequences mature and the AI learns your audience."
+  },
+  {
+    index: 5,
+    title: "What types of businesses is this for?",
+    description: "We work with high-ticket, appointment-based businesses across many industries: solar, insurance, real estate, home services, financial advisors, agencies, med spas, and more. If you sell something worth $10k+ (or have strong LTV) and rely on booked calls to close, this was built for you."
+  },
+  {
+    index: 6,
+    title: "What if our close rate is low?",
+    description: "We require a minimum 30% close rate on appointments that actually happen. If you're below that, we offer a sales optimization add-on. Our system fills your calendar; your team needs to be able to convert when they get on the phone."
+  }
+];
+
+const description = "Got Questions? We've Got Answers.";
+---
+
+<Section id="faq">
+  <div class="mt-[140px] mb-20">
+    <SectionTitle
+      sectionTitle="Common Questions"
+      description={description}
+    />
+    <div class="mt-14">
+      {
+        faqs.map((faq) => {
+          return (
+            <AccordionItem
+              index={faq.index}
+              title={faq.title}
+              description={faq.description}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</Section>

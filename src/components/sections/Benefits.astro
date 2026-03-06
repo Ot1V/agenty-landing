@@ -1,0 +1,44 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const benefits = [
+  {
+    title: "24/7 Coverage, Zero Payroll",
+    description: "Your AI agents never sleep, never call in sick, and never forget a follow up. Every lead gets the same fast, consistent experience whether they come in at 2am or 2pm. No hiring. No training. No turnover.",
+    icon: "⏰"
+  },
+  {
+    title: "Plugs Into Your Existing Stack",
+    description: "Works with your current CRM, calendar, and ad platforms. We don't rip out what already works. We layer on top and make everything convert better. GoHighLevel, HubSpot, Salesforce, and more.",
+    icon: "🔗"
+  },
+  {
+    title: "Done For You, Live in 7 Days",
+    description: "We build, configure, and launch everything. Your team doesn't need to learn new software or change their daily workflow. You just show up to more qualified appointments. If we're not live in 7 days, you don't pay month one.",
+    icon: "🚀"
+  }
+];
+
+const description = "Built for Revenue, Not Just Efficiency";
+---
+
+<Section id="benefits">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle 
+      sectionTitle="Why It Works" 
+      description={description} 
+    />
+    <div class="grid lg:grid-cols-3 gap-10 mt-14">
+      {
+        benefits.map((benefit, index) => (
+          <div class={`p-10 sm:p-12 sm:rounded-[45px] border border-zinc-200 shadow-sm flex flex-col items-start ${index === 1 ? 'bg-dark text-white border-zinc-800' : 'bg-gray text-black'}`}>
+            <span class="text-6xl mb-8">{benefit.icon}</span>
+            <h3 class={`text-2xl font-medium mb-4 ${index === 1 ? 'text-white' : ''}`}>{benefit.title}</h3>
+            <p class={`text-lg ${index === 1 ? 'text-zinc-300' : 'text-zinc-600'}`}>{benefit.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>
